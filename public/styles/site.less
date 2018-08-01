@@ -19,18 +19,33 @@ body {
   width: 100%;
 }
 
+.button {
+  background-color: #e6e6e6;
+  color: rgba(0, 0, 0, 0.8);
+  padding: .5em 1em;
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .container {
   margin: 0 auto;
   width: 95%;
 }
 
-.container_sm {
+.container_sm,
+.container_xs {
   width: 95%;
 }
 
 @media screen and (min-width: 768px) {
   .container_sm {
     width: 60%;
+  }
+  .container_xs {
+    width: 50%;
   }
 }
 

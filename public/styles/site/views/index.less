@@ -28,16 +28,136 @@
   animation: float 1s infinite;
 }
 
-@keyframes float {
-  0% { bottom: 1.5rem }
-  25% { bottom: 1.6rem }
-  50% { bottom: 1.7rem }
-  75% { bottom: 1.6rem }
-  100% { bottom: 1.5rem }
+#content {
+  padding: 2rem 0;
+}
+
+section {
+  margin: 2.5rem 0;
+}
+
+section:nth-last-child(1) {
+  margin-bottom: 0;
+}
+
+.content__title {
+  font-family: 'Patua One', cursive;
+  letter-spacing: 1px;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.content__subtitle {
+  font-size: 1.2rem;
+  line-height: 25px;
+}
+
+.leaders {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-rows: 1fr;
+}
+
+.leader {
+  display: grid;
+}
+
+.download {
+  justify-self: center;
+}
+
+.leader__photo {
+  align-self: center;
+  justify-self: center;
+}
+
+.leader__photo img {
+  border-radius: 50%;
+  max-width: 100px;
+}
+
+.leader__name {
+  font-weight: 400;
+  margin: 1rem 0 0;
+  text-align: center;
+}
+
+.leader__bio {
+  margin: 1rem 0 0;
+}
+
+// Stats
+.stats h3 {
+  font-family: 'Patua One', cursive;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0 0 1rem;
+}
+
+.stats p {
+  margin: 0 0 1rem;
+}
+// Stories
+.stories {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-rows: 1fr;
+}
+
+.storie {
+  border-bottom: 1px solid #e6e6e6;
+  display: grid;
+  padding: 0 0 1rem;
+}
+
+.storie__info a {
+  margin-top: 1rem;
+}
+
+.storie__image {
+  justify-self: center;
+}
+
+.storie__image img {
+  max-width: 100%;
+}
+
+.storie__title {
+  margin: 1rem 0 0;
+}
+
+.storie__brief p {
+  margin: 1rem 0 0;
 }
 
 @media screen and (min-width: 768px) {
   .counter__description {
     padding: 0 3em;
   }
+  .leader {
+    grid-template-columns: 100px 1fr;
+    grid-gap: 2rem;
+  }
+  .leader__name {
+    text-align: left;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .storie {
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-gap: 2rem;
+  }
+  .storie__title {
+    margin: 0;
+  }
+}
+
+@keyframes float {
+  0% { bottom: 1.5rem }
+  25% { bottom: 1.6rem }
+  50% { bottom: 1.7rem }
+  75% { bottom: 1.6rem }
+  100% { bottom: 1.5rem }
 }

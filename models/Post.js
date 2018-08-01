@@ -17,6 +17,7 @@ Post.add(
 			brief: { type: Types.Markdown, wysiwyg: true, height: 150 },
 			extended: { type: Types.Markdown, wysiwyg: true, height: 400 },
 		},
+		related: { type: Types.Relationship, ref: 'Post', many: true },
 		categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
 	},
 	{ heading: 'SEO Fields' },
@@ -34,6 +35,8 @@ Post.add(
 Post.schema.virtual('content.full').get(function () {
 	return this.content.extended || this.content.brief;
 });
+
+Post.relationship({ ref: 'Post', path: 'posts', refPath: 'related' });
 
 Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';
 Post.register();

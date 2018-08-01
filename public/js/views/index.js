@@ -16,6 +16,6 @@ function getTotal (data, tabletop) {
 	}
 }
 
-const moveTo = new MoveTo();
+const moveTo = new MoveTo({ tolerance: 20 });
 const chevron = document.getElementById('chevron');
 moveTo.registerTrigger(chevron);
