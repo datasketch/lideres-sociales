@@ -1,0 +1,36 @@
+.topnav {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+.topnav__content {
+  align-items: center;
+  display: grid;
+  grid-template-areas: 'brand title helpers';
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.topnav__brand {
+  grid-area: brand;
+  img {
+    filter: brightness(0) invert(1);
+    max-width: 170px;
+    width: 170px;
+  }
+}
+
+.topnav__title {
+  font-family: 'Patua One', sans-serif;
+  grid-area: title;
+  justify-self: center;
+  letter-spacing: 1px;
+}
+
+.topnav__helpers {
+  grid-area: helpers;
+  justify-self: end;
+  a {
+    color: #ffffff;
+    margin: 0 0 0 10px;
+  }
+}
