@@ -1,29 +1,28 @@
 extends ../layouts/default
 
-block content
-	.container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
-		article
-			p: a(href='/blog') &larr; back to the blog
-			hr
-			if !data.post
-				h2 Invalid Post.
-			else
-				header
-					h1= data.post.title
-					h5 Posted 
-						if data.post.publishedDate
-							| on #{data.post._.publishedDate.format('MMMM Do, YYYY')} 
-						if data.post.categories && data.post.categories.length
-							| in 
-							each cat, cat_i in data.post.categories
-								a(href='/blog/' + cat.key)= cat.name
-								if cat_i < data.post.categories.length - 1
-									| , 
-								else
-									|  
-						if data.post.author
-							| by #{data.post.author.name.first}
-				.post
-					if data.post.image.exists
-						.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
-					!= data.post.content.full
+block meta
+	- var post = data.post
+	meta(name="description" content=post.seoDescription.md)
+
+	//- Google / Search Engine Tags
+	meta(itemprop="name" content=post.seoTitle)
+	meta(itemprop="description" content=post.seoDescription.md)
+	meta(itemprop="image" content=post.image.secure_url)
+
+	//- Facebook Meta Tags
+	meta(property="og:url" content=`http://lideres-sociales.datasketch.co/post/${post.slug}`)
+	meta(property="og:type" content="website")
+	meta(property="og:title" content=post.seoTitle)
+	meta(property="og:description" content=post.seoDescription.md)
+	meta(property="og:image" content=post.image.secure_url)
+
+	//- Twitter Meta Tags
+	meta(name="twitter:card" content="summary_large_image")
+	meta(name="twitter:title" content=post.seoTitle)
+	meta(name="twitter:description" content=post.seoDescription.md)
+	meta(name="twitter:image" content=post.image.secure_url)
+
+block title
+	title #{data.post.title} | Datasketch
+
+block main

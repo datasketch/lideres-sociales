@@ -24,7 +24,6 @@ Post.add(
 	{
 		seoTitle: { type: String },
 		seoDescription: { type: Types.Markdown, wysiwyg: true, height: 150 },
-		image: { type: Types.CloudinaryImage },
 	},
 	{ heading: 'Copyright' },
 	{
