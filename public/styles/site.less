@@ -26,6 +26,11 @@ body {
   text-decoration: none;
 }
 
+.button_blue {
+  background: #3d83d1;
+  color: #f4f4f4;
+}
+
 .text-center {
   text-align: center;
 }
@@ -42,6 +47,15 @@ body {
 
 @media screen and (min-width: 768px) {
   .container_sm {
+    width: 70%;
+  }
+  .container_xs {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container_sm {
     width: 60%;
   }
   .container_xs {
@@ -55,3 +69,4 @@ body {
 @import "site/blocks/nav.less";
 // Views styles
 @import "site/views/index.less";
+@import "site/views/post.less";

@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const keystone = require('keystone');
 const middleware = require('./middleware');
 const importRoutes = keystone.importer(__dirname);
@@ -13,6 +14,8 @@ exports = module.exports = function (app) {
 	app.get('/', routes.views.index);
 	app.get('/post/:slug', routes.views.post);
 	app.use((err, req, res, next) => {
+		console.log(`${chalk.red('[error]: ')} ${err.message}`);
+		console.error(err.stack);
 		res.render('errors/500');
 	});
 };

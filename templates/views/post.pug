@@ -23,6 +23,27 @@ block meta
 	meta(name="twitter:image" content=post.image.secure_url)
 
 block title
-	title #{data.post.title} | Datasketch
+	title #{data.post.title} | Datasketchd
 
 block main
+	- var post = data.post
+	.post__banner.column.centered
+		.container
+			h1.post__title.text-center= post.title
+	- var layout = post.layout
+	.post__content.container(class=`${layout} ${layout === 'single' ? 'container_sm' : ''}`)
+		.post__body(class=`${layout} ${layout === 'split' ? 'container container_sm' : ''}`) !{post.content.extended.html}
+		.post__related
+			if post.related.length
+				h2.post__related__header Noticias Relacionadas
+				.articles
+					each related in post.related
+						a(href="href=`/post/${related.slug}`").related
+							.related__image
+								img(src=related._.image.thumbnail(400, 225, { secure: true }))
+							.related__info
+								h3.related__title #{related.title}
+								.related__brief !{related.content.brief.html}
+
+block js
+	script(src="/js/views/post.js")

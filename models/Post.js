@@ -12,6 +12,7 @@ Post.add(
 		state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 		author: { type: Types.Relationship, ref: 'User', index: true },
 		publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
+		layout: { type: Types.Select, options: [{ value: 'single', label: 'Single' }, { value: 'split', label: 'Split' }], emptyOption: false, default: 'single' },
 		image: { type: Types.CloudinaryImage },
 		content: {
 			brief: { type: Types.Markdown, wysiwyg: true, height: 150 },
