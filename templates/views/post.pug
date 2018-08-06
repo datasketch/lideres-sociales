@@ -39,12 +39,13 @@ block main
 					h2.post__related__header Noticias Relacionadas
 					.articles
 						each related in post.related
-							a(href="href=`/post/${related.slug}`").related
+							a(href=`/post/${related.slug}`).related
 								.related__image
 									img(src=related._.image.thumbnail(400, 225, { secure: true }))
 								.related__info
 									h3.related__title #{related.title}
 									.related__brief !{related.content.brief.html}
+	.container.container_sm#disqus_thread
 
 block js
 	script(src="/js/views/post.js")
