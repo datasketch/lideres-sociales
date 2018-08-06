@@ -22,18 +22,20 @@ block main
               h3.leader__name= leader.name
               p.leader__bio !{leader.bio.md}
         .download
-          a.button.button_blue(href="https://docs.google.com/spreadsheets/d/1I9NHXhAPSzruE5s94_X5FQpRMksz6MTHgLCgrTviqfM/edit#gid=0", style="display: block", target="_blank", rel="noopener noreferrer") Descargar datos
+          a.button.button_blue(href="https://docs.google.com/spreadsheets/d/1I9NHXhAPSzruE5s94_X5FQpRMksz6MTHgLCgrTviqfM/edit#gid=0", style="display: block", target="_blank", rel="noopener noreferrer") Todos los líderes asesinados
       section.stats !{data.stats.content.html}
       section
         h2.content__title Historias
         .stories
           each storie in data.stories
+            - var date = moment(storie.publishedDate).locale('es').format('MMMM DD, YYYY')
             article.storie
               .storie__image
                 img(src=storie._.image.thumbnail(720, 405, { secure: true }))
               .storie__info.column.justify-between
                 div
                   h3.storie__title #{storie.title}
+                  small #{date.charAt(0).toUpperCase() +  date.substr(1)}
                   .storie__brief !{storie.content.brief.html}
                 a.button.button_blue.item-end(href=`/post/${storie.slug}`) Seguir leyendo
 block js
