@@ -1,0 +1,10 @@
+extends ../layouts/default
+
+block title
+  title Metodología | Datasketch
+
+block main
+  - var m = data.methodology
+  .container.container_xs
+    h1.post__title.text-center= m.title
+    .post__body !{m.content.html}

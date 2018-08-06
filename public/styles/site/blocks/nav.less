@@ -8,8 +8,8 @@
 .topnav__content {
   align-items: center;
   display: grid;
-  grid-template-areas: 'brand title helpers';
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: 'brand helpers';
+  grid-template-columns: auto 1fr;
 }
 
 .topnav__brand {
@@ -17,15 +17,8 @@
   img {
     filter: brightness(0) invert(1);
     max-width: 170px;
-    width: 170px;
+    width: 130px;
   }
-}
-
-.topnav__title {
-  font-family: 'Patua One', sans-serif;
-  grid-area: title;
-  justify-self: center;
-  letter-spacing: 1px;
 }
 
 .topnav__helpers {
@@ -34,5 +27,12 @@
   a {
     color: #ffffff;
     margin: 0 0 0 10px;
+    text-decoration: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .topnav__brand img {
+    width: 170px;
   }
 }

@@ -13,6 +13,7 @@ var routes = {
 exports = module.exports = function (app) {
 	app.get('/', routes.views.index);
 	app.get('/post/:slug', routes.views.post);
+	app.get('/metodologia', routes.views.methodology);
 	app.use((err, req, res, next) => {
 		console.log(`${chalk.red('[error]: ')} ${err.message}`);
 		console.error(err.stack);
