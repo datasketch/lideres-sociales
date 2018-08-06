@@ -7,4 +7,8 @@ block main
   - var m = data.methodology
   .container.container_xs
     h1.post__title.text-center= m.title
-    .post__body !{m.content.html}
+    .post__body_content !{m.content.html}
+    #disqus_thread
+
+block js
+  script(src="/js/disqus.js")

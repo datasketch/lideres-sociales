@@ -28,11 +28,13 @@ block title
 block main
 	- var post = data.post
 	.post__banner.column.centered.background(style=`background-image: url(${post.image.secure_url})`)
-		.container
-			h1.post__title.text-center= post.title
 	- var layout = post.layout
 	.post__content.container(class=`${layout} ${layout === 'single' ? 'container_sm' : ''}`)
-		.post__body(class=`${layout} ${layout === 'split' ? 'container container_sm' : ''}`) !{post.content.extended.html}
+		.post__body(class=`${layout} ${layout === 'split' ? 'container container_sm' : ''}`)
+			h1.post__title= post.title
+			.post__body_content !{post.content.extended.html}
+			if post.copyright.html
+				.copyright !{post.copyright.html}
 		.post__related
 			if post.related.length
 				.posts
@@ -49,3 +51,4 @@ block main
 
 block js
 	script(src="/js/views/post.js")
+	script(src="/js/disqus.js")
