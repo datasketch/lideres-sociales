@@ -4,15 +4,15 @@ block title
   title Líderes sociales | Datasketch
 
 block main
-  .counter.column.centered
+  .counter.column.centered.background(style="background-image: url(/images/site/banner.jpg)")
     .container.container_sm
       h1.counter__number 0
-      p.counter__description Líderes sociales han sido asesinados desde la firma de los acuerdos de paz
+      p.counter__description líderes sociales en Colombia han sido asesinados desde el primero de Enero de 2016. Conoce más sobre ellos.
     a#chevron(href="#content"): span.fa.fa-chevron-down
   #content
     .container.container_sm
       h1.content__title.text-center Líderes sociales
-      p.content__subtitle Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ullam a. Possimus sapiente neque rerum doloribus, maiores cumque ullam cupiditate provident recusandae quos quaerat minima dignissimos magnam culpa nemo ipsa distinctio. Provident, itaque? Dolorem ipsum, quibusdam neque autem nostrum ea facere. Fuga quo veniam temporibus nemo non quae officia quod.
+      p.content__subtitle Cada 3 días es asesinado un líder social en Colombia. Mientras las denuncias aumentan, el Gobierno se mantiene en su teoría de que son casos aislados. Cada vez se cuentan más víctimas, cada día la impunidad continúa.
       section.leaders
         each leader in data.leaders
           .leader
@@ -22,7 +22,7 @@ block main
               h3.leader__name= leader.name
               p.leader__bio !{leader.bio.md}
         .download
-          a.button(href="https://docs.google.com/spreadsheets/d/1I9NHXhAPSzruE5s94_X5FQpRMksz6MTHgLCgrTviqfM/edit#gid=0", style="display: block", target="_blank", rel="noopener noreferrer") Descargar datos
+          a.button.button_blue(href="https://docs.google.com/spreadsheets/d/1I9NHXhAPSzruE5s94_X5FQpRMksz6MTHgLCgrTviqfM/edit#gid=0", style="display: block", target="_blank", rel="noopener noreferrer") Descargar datos
       section.stats !{data.stats.content.html}
       section
         h2.content__title Historias

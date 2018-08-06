@@ -1,7 +1,7 @@
 .post__banner {
   background-color: #2a2a2a;
   color: white;
-  height: 75vh;
+  height: 85vh;
 }
 
 .post__title {
@@ -37,6 +37,7 @@
 
 .post__related {
   grid-area: related;
+  position: relative;
 }
 
 .post__related__header {
@@ -80,6 +81,10 @@
   .related {
     grid-template-columns: 0.5fr 0.5fr;
     grid-gap: 2rem;
+  }
+  .posts {
+    position: sticky;
+    top: 3rem;
   }
   .post__content.split .related {
     grid-template-columns: 1fr;
