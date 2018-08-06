@@ -19,3 +19,5 @@ function getTotal (data, tabletop) {
 const moveTo = new MoveTo({ tolerance: 20 });
 const chevron = document.getElementById('chevron');
 moveTo.registerTrigger(chevron);
+
+iFrameResize({}, '#iframe');

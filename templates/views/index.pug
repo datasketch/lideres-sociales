@@ -24,6 +24,9 @@ block main
         .download
           a.button.button_blue(href="https://docs.google.com/spreadsheets/d/1I9NHXhAPSzruE5s94_X5FQpRMksz6MTHgLCgrTviqfM/edit#gid=0", style="display: block", target="_blank", rel="noopener noreferrer") Todos los líderes asesinados
       section.stats !{data.stats.content.html}
+    section.app
+      iframe#iframe(src="https://randommonkey.shinyapps.io/specials_derechos_humanos/", frameborder="0")
+    .container.container_sm
       section
         h2.content__title Historias
         .stories
@@ -42,4 +45,5 @@ block js
   script(src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.2/tabletop.min.js")
   script(src="https://cdn.jsdelivr.net/npm/countup@1.8.2/dist/countUp.min.js")
   script(src="https://cdnjs.cloudflare.com/ajax/libs/moveTo/1.7.3/moveTo.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.1/iframeResizer.min.js")
   script(src="/js/views/index.js")
