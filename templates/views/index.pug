@@ -22,7 +22,7 @@ block main
               h3.leader__name= leader.name
               p.leader__bio !{leader.bio.md}
         .download
-          a.button.button_blue(href="https://docs.google.com/spreadsheets/d/1I9NHXhAPSzruE5s94_X5FQpRMksz6MTHgLCgrTviqfM/edit#gid=0", style="display: block", target="_blank", rel="noopener noreferrer") Todos los líderes asesinados
+          a.button.button_orange(href="https://docs.google.com/spreadsheets/d/1I9NHXhAPSzruE5s94_X5FQpRMksz6MTHgLCgrTviqfM/edit#gid=0", style="display: block", target="_blank", rel="noopener noreferrer") Todos los líderes asesinados
       section.stats !{data.stats.content.html}
     section.app
       iframe#iframe(src="https://randommonkey.shinyapps.io/specials_derechos_humanos/", frameborder="0")
@@ -40,7 +40,7 @@ block main
                   h3.storie__title #{storie.title}
                   small #{date.charAt(0).toUpperCase() +  date.substr(1)}
                   .storie__brief !{storie.content.brief.html}
-                a.button.button_blue.item-end(href=`/post/${storie.slug}`) Seguir leyendo
+                a.button.button_orange.item-end(href=`/post/${storie.slug}`) Seguir leyendo
 block js
   script(src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.2/tabletop.min.js")
   script(src="https://cdn.jsdelivr.net/npm/countup@1.8.2/dist/countUp.min.js")
