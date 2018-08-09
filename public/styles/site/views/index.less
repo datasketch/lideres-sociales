@@ -20,7 +20,7 @@
 
 #chevron {
   bottom: 1.5rem;
-  color: yellow;
+  color: #f8c439;
   font-size: 1.5rem;
   left: 50%;
   position: absolute;
@@ -87,6 +87,44 @@ section:nth-last-child(1) {
   margin: 1rem 0 0;
 }
 
+// Sponsored
+.sponsored {
+  background: #c93d1b;
+  color: #ffffff;
+  // min-height: 50vh;
+  padding: 2.5% 0;
+}
+
+.sponsored__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-gap: 2rem;
+}
+
+.campaign a {
+  text-transform: uppercase;
+}
+
+.calendar__header {
+  margin: 0 0 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.calendar__events {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.calendar__event {
+  border-bottom: 1px solid #e6e6e6;
+}
+.calendar__event span {
+  display: block;
+  margin: 0 0 5px;
+}
 // Stats
 .stats h3 {
   font-family: 'Patua One', cursive;
@@ -163,6 +201,10 @@ section:nth-last-child(1) {
   }
   .storie__title {
     margin: 0;
+  }
+  .sponsored__container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
   }
 }
 
