@@ -24,13 +24,15 @@ exports = module.exports = function (req, res) {
 	});
 
 	view.on('init', next => {
-		Post.find({ state: 'published' }, (err, posts) => {
-			if (err) {
-				return next(err);
-			}
-			locals.data.stories = posts;
-			next();
-		});
+		Post.find({ state: 'published' })
+			.sort('-publishedDate')
+			.exec((err, posts) => {
+				if (err) {
+					return next(err);
+				}
+				locals.data.stories = posts;
+				next();
+			});
 	});
 
 	view.on('init', next => {
