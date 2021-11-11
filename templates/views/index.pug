@@ -33,7 +33,31 @@ block main
           .calendar__events
             p.text-center Cargando eventos...
     .container.container_sm
-      section.stats !{data.stats.content.html}
+      section.stats
+        p
+          | Los datos recolectados de los líderes sociales asesinados desde el 2016 hasta hoy
+          em (fecha de corte: 25 de julio de 2019),
+          | tienen ciertos aspectos destacables como el tipo de liderazgo y el lugar del crímen. Aquí les presentamos un resumen estadístico de las víctimas.
+        h3 Departamentos con más líderes asesinados
+        p El departamento del Cauca es el que más presenta número de víctimas. Desde el 2016, en este departamento han sido asesinados 118 líderes. El único departamento que le sigue es Antioquia, con 75 líderes. La situación del Cauca se agrava por la presencia de bandas criminales, minería ilegal y cultivos ilícitos.
+        .iframe-container
+          iframe(src="https://datasketch.shinyapps.io/barrasLideres/", frameborder="0")
+        p Además, se puede decir que donde más se han presentado asesinatos a líderes sociales es en la Región Pacífica que comprende los departamentos de Nariño, Cauca, Valle del Cauca, Chocó, Antioquia y Córdoba.
+        //- .iframe-container
+        //-   iframe(src="https://datasketch.shinyapps.io/lideres-app/", frameborder="0")
+        h3 Municipios con más líderes asesinados
+        p El municipio con más líderes asesinados es Tumaco, ubicado en el departamento de Nariño, en este hay presencia de bandas criminales, minería ilegal y cultivos ilícitos, que agravan el conflicto. Los siguientes son Corinto y Caloto en Cauca.
+        .iframe-container
+          iframe(src="https://datasketch.shinyapps.io/barMun/", frameborder="0")
+        h3 Tipos de líderes que más asesinan
+        p La mayoría de los líderes asesinados son aquellos que por sus labores de liderazgo defienden más de una causa, como es el caso de los líderes comunitarios, que a la vez son líderes campesinos o agrarios, entre otros Le siguen aquellos que pertenecen o son directivos de Juntas de Acción Comunal o Juntas Administradoras Locales.
+        .iframe-container
+          iframe(src="https://datasketch.shinyapps.io/tipoLider/", frameborder="0")
+        h3 El histórico de víctimas
+        p El mes con más víctimas ha sido julio de 2018, con 33 asesinatos, seguido de enero de 2017 con 29 víctimas que conmocionaron al país a tal punto que se realizaron marchas y manifestaciones en contra de esta violencia sistemática.
+        .iframe-container
+          iframe(src="https://datasketch.shinyapps.io/lineasLider/", frameborder="0")
+        h3 Estas son cada una de las víctimas que ha registrado Datasketch desde 2016.
     section.app
       iframe#iframe(src="https://randommonkey.shinyapps.io/specials_derechos_humanos/", frameborder="0")
     .container.container_sm
