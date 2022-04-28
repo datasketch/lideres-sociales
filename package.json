@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "async": "2.1.4",
+    "async": "2.6.4",
     "chalk": "^2.4.1",
     "dotenv": "4.0.0",
     "fresh": "^0.5.2",
