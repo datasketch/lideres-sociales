@@ -13,7 +13,7 @@
     "marked": "^0.4.0",
     "method-override": "^3.0.0",
     "mime": "^2.3.1",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "node-mime": "^1.0.0",
     "pug": "2.0.0-beta11",
     "static-eval": "^2.1.0"
